@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sela Salafiah</title>
+    <link rel="stylesheet" href="./dist/output.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .bg-soft {
+            background: radial-gradient(1200px 600px at 10% -10%, #d5f5f0 0%, transparent 55%),
+                        radial-gradient(900px 500px at 100% 0%, #e2e8f0 0%, transparent 45%),
+                        linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+        .dark .bg-soft {
+            background: radial-gradient(1200px 600px at 10% -10%, #0d2d2a 0%, transparent 55%),
+                        radial-gradient(900px 500px at 100% 0%, #0f172a 0%, transparent 45%),
+                        linear-gradient(180deg, #020617 0%, #0f172a 100%);
+        }
+        #modal-content::-webkit-scrollbar { width: 4px; }
+        #modal-content::-webkit-scrollbar-thumb { background: #14b8a6; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-soft text-slate-800 dark:text-slate-200 font-sans min-h-screen transition-colors duration-300">
+    
+    <header class="max-w-6xl mx-auto px-6 pt-8 md:pt-10">
+        <nav class="flex flex-col sm:flex-row items-center justify-between gap-6">
+            <a href="#" class="font-extrabold tracking-tight text-xl dark:text-white tracking-widest">Sela Salafiah</a>
+            
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-4 pr-6 border-r border-slate-300 dark:border-slate-700">
+                    <a href="https://github.com/selazy1" target="_blank" class="text-slate-500 hover:text-slate-900 dark:hover:text-white transition">
+                        <i class="ti ti-brand-github text-2xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/seselavy" target="_blank" class="text-slate-500 hover:text-pink-600 transition">
+                        <i class="ti ti-brand-instagram text-2xl"></i>
+                    </a>
+                    <a href="https://wa.me/6285176907011" target="_blank" class="text-slate-500 hover:text-green-600 transition">
+                        <i class="ti ti-brand-whatsapp text-2xl"></i>
+                    </a>
+                </div>
+
+                <button id="theme-toggle" class="p-2 rounded-xl bg-white/50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:scale-105 transition active:scale-95 shadow-sm">
+                    <i id="theme-icon" class="ti ti-moon text-xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 pb-16">
+        <section class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center pt-10 md:pt-7">
+            <div class="order-2 lg:order-1 animate-rise [animation-delay:80ms]">
+                <p class="inline-flex items-center px-3 py-1 rounded-full text-[10px] uppercase tracking-widest font-bold bg-accent-100 dark:bg-accent-900/30 text-accent-600 dark:text-accent-400 mb-6">
+                    Full-Stack Web Developer
+                </p>
+                <h1 class="text-5xl lg:text-6xl font-extrabold leading-[1.1] text-slate-900 dark:text-white tracking-tighter">
+                    Web &<br>Game Developer
+                </h1>
+                
+                <p class="mt-6 text-lg text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed">
+                    Saya membangun website yang cepat, aman, dan mudah digunakan. Mengubah ide Anda menjadi aplikasi digital kelas profesional dengan kode yang rapi.
+                </p>
+
+                <div class="mt-12 flex gap-12 items-center">
+                    <div>
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-4xl font-black text-slate-900 dark:text-white">1+</span>
+                            <span class="text-accent-500 font-bold text-xl">Tahun</span>
+                        </div>
+                        <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-400 mt-1">Pengalaman Profesional</p>
+                    </div>
+
+                    <div class="h-10 w-[1px] bg-slate-200 dark:bg-slate-800"></div>
+
+                    <div>
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-4xl font-black text-slate-900 dark:text-white">13</span>
+                            <span class="text-accent-500 font-bold text-xl">Proyek</span>
+                        </div>
+                        <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-400 mt-1">Selesai Dibangun</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-1 lg:order-2 animate-rise [animation-delay:180ms]">
+                <div class="relative rounded-[2rem] p-4 bg-white/70 dark:bg-slate-900/50 backdrop-blur border border-slate-200 dark:border-slate-800">
+                    <img src="https://placehold.co/720x860/e2e8f0/475569?text=Sela+Salafiah" alt="Foto profil" class="rounded-[1.5rem] w-full h-[450px] object-cover">
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="mt-32 max-w-6xl mx-auto px-6">
+            <div class="grid lg:grid-cols-12 gap-16 items-start">
+                
+                <div class="lg:col-span-7 space-y-12 animate-rise">
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2">
+                            <div class="h-[1px] w-8 bg-accent-500"></div>
+                            <span class="text-accent-500 font-bold tracking-[0.2em] text-[10px] uppercase">Who I Am</span>
+                        </div>
+                        
+                        <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
+                            Sela Salafiah
+                        </h2>
+                        
+                        <div class="text-slate-600 dark:text-slate-400 text-lg md:text-xl leading-relaxed space-y-6">
+                            <p>
+                                Saya adalah seorang <span class="text-slate-900 dark:text-white font-semibold decoration-accent-500/30 decoration-4">Web Developer</span> yang mendedikasikan diri pada kode yang rapi dan performa yang optimal.
+                            </p>
+                            <p>
+                                Dengan spesialisasi di <strong class="text-slate-800 dark:text-white">Laravel</strong>, saya mentransformasi logika sistem yang kompleks menjadi solusi digital yang fungsional, rapi, dan mudah dipahami.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <h3 class="text-xs font-bold text-slate-400 uppercase tracking-widest flex items-center gap-4">
+                            Skill <div class="h-[1px] flex-1 bg-slate-200 dark:bg-slate-800"></div>
+                        </h3>
+                        <div class="flex flex-wrap gap-x-8 gap-y-6">
+                            <div class="flex items-center gap-2 group cursor-default">
+                                <i class="ti ti-brand-laravel text-2xl text-accent-500 transition-transform group-hover:-translate-y-1"></i>
+                                <span class="text-xs font-bold text-slate-600 dark:text-slate-300">Laravel</span>
+                            </div>
+                            <div class="flex items-center gap-2 group cursor-default">
+                                <i class="ti ti-brand-php text-2xl text-blue-500 transition-transform group-hover:-translate-y-1"></i>
+                                <span class="text-xs font-bold text-slate-600 dark:text-slate-300">PHP</span>
+                            </div>
+                            <div class="flex items-center gap-2 group cursor-default">
+                                <i class="ti ti-database text-2xl text-orange-500 transition-transform group-hover:-translate-y-1"></i>
+                                <span class="text-xs font-bold text-slate-600 dark:text-slate-300">MySQL</span>
+                            </div>
+                            <div class="flex items-center gap-2 group cursor-default">
+                                <i class="ti ti-brand-javascript text-2xl text-yellow-500 transition-transform group-hover:-translate-y-1"></i>
+                                <span class="text-xs font-bold text-slate-600 dark:text-slate-300">JavaScript</span>
+                            </div>
+                            <div class="flex items-center gap-2 group cursor-default">
+                                <i class="ti ti-brand-python text-2xl text-blue-700 transition-transform group-hover:-translate-y-1"></i>
+                                <span class="text-xs font-bold text-slate-600 dark:text-slate-300">Python</span>
+                            </div>
+                            <div class="flex items-center gap-2 group cursor-default">
+                                <i class="ti ti-brand-figma text-2xl text-pink-500 transition-transform group-hover:-translate-y-1"></i>
+                                <span class="text-xs font-bold text-slate-600 dark:text-slate-300">Figma</span>
+                            </div>
+                            <div class="flex items-center gap-2 group cursor-default">
+                                <i class="ti ti-brand-unity text-2xl text-slate-400 dark:text-slate-500 transition-transform group-hover:-translate-y-1"></i>
+                                <span class="text-xs font-bold text-slate-600 dark:text-slate-300">Unity</span>
+                            </div>
+                            <div class="flex items-center gap-2 group cursor-default">
+                                <i class="ti ti-brand-github text-2xl text-slate-900 dark:text-white transition-transform group-hover:-translate-y-1"></i>
+                                <span class="text-xs font-bold text-slate-600 dark:text-slate-300">GitHub</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 space-y-12 animate-rise [animation-delay:150ms]">
+                    <div class="space-y-6">
+                        <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] flex items-center gap-3">
+                            Experience <div class="h-[1px] flex-1 bg-slate-200 dark:bg-slate-800"></div>
+                        </h3>
+                        <div class="relative pl-6 border-l border-slate-200 dark:border-slate-800">
+                            <div class="absolute -left-[5px] top-0 h-[9px] w-[9px] rounded-full bg-accent-500"></div>
+                            <div class="flex justify-between items-start">
+                                <h4 class="font-bold text-slate-900 dark:text-white text-lg">Access Media</h4>
+                                <span class="text-[9px] font-bold px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded tracking-widest">4 MONTHS</span>
+                            </div>
+                            <p class="text-xs text-accent-500 font-bold uppercase tracking-widest mt-1 italic">Web Developer Intern</p>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 mt-3 leading-relaxed">
+                                Membangun fitur aplikasi berbasis Laravel dan optimasi sistem sesuai standar industri.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] flex items-center gap-3">
+                            Education <div class="h-[1px] flex-1 bg-slate-200 dark:bg-slate-800"></div>
+                        </h3>
+                        <div class="space-y-8 pl-6 border-l border-slate-200 dark:border-slate-800 relative">
+                            <div class="relative">
+                                <div class="absolute -left-[29px] top-1.5 h-[9px] w-[9px] rounded-full bg-accent-500 shadow-[0_0_10px_rgba(20,184,166,0.5)]"></div>
+                                <h4 class="font-bold text-slate-900 dark:text-white text-sm">SMKN 1 Banjar</h4>
+                                <p class="text-[10px] text-slate-500 tracking-tight mt-1">Pengembangan Perangkat Lunak dan Gim</p>
+                            </div>
+                            <div class="relative">
+                                <div class="absolute -left-[29px] top-1.5 h-[9px] w-[9px] rounded-full bg-slate-300 dark:bg-slate-700"></div>
+                                <h4 class="font-bold text-slate-700 dark:text-slate-300 text-sm opacity-80">MTsN 1 Banjar</h4>
+                                <p class="text-[10px] text-slate-400 mt-1 tracking-tight italic">Pendidikan Menengah Pertama</p>
+                            </div>
+                            <div class="relative">
+                                <div class="absolute -left-[29px] top-1.5 h-[9px] w-[9px] rounded-full bg-slate-300 dark:bg-slate-700"></div>
+                                <h4 class="font-bold text-slate-700 dark:text-slate-300 text-sm opacity-80">MI Cibeunteur</h4>
+                                <p class="text-[10px] text-slate-400 mt-1 tracking-tight italic">Pendidikan Dasar</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="mt-32 animate-rise [animation-delay:300ms]">
+            <div class="mb-12 space-y-6">
+                <div class="inline-flex items-center gap-2">
+                    <div class="h-[1px] w-8 bg-accent-500"></div>
+                    <span class="text-accent-500 font-bold tracking-[0.2em] text-[10px] uppercase">Portfolio</span>
+                </div>
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">Projects</h2>
+                        <p class="mt-4 text-slate-500 dark:text-slate-400 max-w-lg leading-relaxed">
+                            Eksplorasi teknologi dan solusi digital yang telah saya kerjakan.
+                        </p>
+                    </div>
+                    <p class="text-sm text-slate-400 dark:text-slate-500 italic">Klik kartu untuk detail proyek.</p>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <div onclick="openModal('project1')" class="group cursor-pointer relative overflow-hidden p-4 md:p-6 rounded-3xl bg-white/30 dark:bg-slate-900/30 backdrop-blur-md border border-slate-200/60 dark:border-slate-800/60 hover:bg-white/60 dark:hover:bg-slate-800/60 transition-all duration-500 shadow-sm">
+                    <div class="relative flex flex-col md:flex-row gap-6">
+                        <div class="relative flex-shrink-0 w-full md:w-48 h-32 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
+                            <img src="assets/sertifikat.png" alt="E-Certificate" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-accent-500 transition-colors">Aplikasi Sertifikat</h3>
+                                <time class="font-mono text-[10px] text-accent-600 dark:text-accent-400 font-bold uppercase tracking-widest">Feb 2026 - Present</time>
+                            </div>
+                            <p class="text-[10px] text-accent-500 font-bold uppercase tracking-[0.2em] mb-2">Access Media Intern</p>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl">Sistem otomatisasi pembuatan sertifikat digital bagi peserta PKL. Mengubah proses manual menjadi otomatis dengan integrasi database dan verifikasi QR Code.</p>
+                            <div class="flex gap-2 mt-4">
+                                <span class="px-3 py-1 text-[9px] bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg font-bold border border-slate-200 dark:border-slate-700 shadow-sm uppercase">Laravel</span>
+                                <span class="px-3 py-1 text-[9px] bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg font-bold border border-slate-200 dark:border-slate-700 shadow-sm uppercase">Tailwind</span>
+                                <span class="px-3 py-1 text-[9px] bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg font-bold border border-slate-200 dark:border-slate-700 shadow-sm uppercase">MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openModal('project2')" class="group cursor-pointer relative overflow-hidden p-4 md:p-6 rounded-3xl bg-white/30 dark:bg-slate-900/30 backdrop-blur-md border border-slate-200/60 dark:border-slate-800/60 hover:bg-white/60 dark:hover:bg-slate-800/60 transition-all duration-500 shadow-sm">
+                    <div class="relative flex flex-col md:flex-row gap-6">
+                        <div class="relative flex-shrink-0 w-full md:w-48 h-32 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
+                            <img src="assets/kasir.png" alt="POS System" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-accent-500 transition-colors">Point of Sale (POS) System</h3>
+                                <time class="font-mono text-[10px] text-slate-400 uppercase tracking-widest">Late 2025</time>
+                            </div>
+                            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em] mb-2">Management Tool</p>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl">Aplikasi kasir profesional dengan 3 hak akses untuk mengelola stok, supplier, dan monitoring pendapatan harian.</p>
+                            <div class="flex gap-2 mt-4">
+                                <span class="px-3 py-1 text-[9px] bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg font-bold border border-slate-200 dark:border-slate-700 shadow-sm uppercase">Laravel Filament</span>
+                                <span class="px-3 py-1 text-[9px] bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg font-bold border border-slate-200 dark:border-slate-700 shadow-sm uppercase">MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openModal('project3')" class="group cursor-pointer relative overflow-hidden p-4 md:p-6 rounded-3xl bg-white/30 dark:bg-slate-900/30 backdrop-blur-md border border-slate-200/60 dark:border-slate-800/60 hover:bg-white/60 dark:hover:bg-slate-800/60 transition-all duration-500 shadow-sm">
+                    <div class="relative flex flex-col md:flex-row gap-6">
+                        <div class="relative flex-shrink-0 w-full md:w-48 h-32 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
+                            <img src="assets/tansyu.png" alt="Seblak Tansyu" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-accent-500 transition-colors">Seblak Tansyu Digital Ordering</h3>
+                                <time class="font-mono text-[10px] text-slate-400 uppercase tracking-widest">Mid 2025</time>
+                            </div>
+                            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em] mb-2">F&B Solution</p>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl">Aplikasi pemesanan digital dengan sistem manajemen nomor meja untuk mempercepat alur kerja dapur dan kasir.</p>
+                            <div class="flex gap-2 mt-4">
+                                <span class="px-3 py-1 text-[9px] bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg font-bold border border-slate-200 dark:border-slate-700 shadow-sm uppercase">PHP Native</span>
+                                <span class="px-3 py-1 text-[9px] bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg font-bold border border-slate-200 dark:border-slate-700 shadow-sm uppercase">MySQL</span>
+                                <span class="px-3 py-1 text-[9px] bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg font-bold border border-slate-200 dark:border-slate-700 shadow-sm uppercase">Tailwind</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openModal('project4')" class="group cursor-pointer relative overflow-hidden p-4 md:p-6 rounded-3xl bg-white/30 dark:bg-slate-900/30 backdrop-blur-md border border-slate-200/60 dark:border-slate-800/60 hover:bg-white/60 dark:hover:bg-slate-800/60 transition-all duration-500 shadow-sm">
+                    <div class="relative flex flex-col md:flex-row gap-6">
+                        <div class="relative flex-shrink-0 w-full md:w-48 h-32 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
+                            <img src="assets/gema warisan.png" alt="Gema Warisan" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-accent-500 transition-colors">Gema Warisan: Galeri Budaya Indonesia</h3>
+                                <time class="font-mono text-[10px] text-slate-400 uppercase tracking-widest">May 2025</time>
+                            </div>
+                            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em] mb-2">Educational Tool</p>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl">Platform edukasi budaya Indonesia yang menampilkan koleksi senjata tradisional dan kesenian.</p>
+                            <div class="flex gap-2 mt-4">
+                                <span class="px-3 py-1 text-[9px] bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg font-bold border border-slate-200 dark:border-slate-700 shadow-sm uppercase">PHP Native</span>
+                                <span class="px-3 py-1 text-[9px] bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg font-bold border border-slate-200 dark:border-slate-700 shadow-sm uppercase">MySQL</span>
+                                <span class="px-3 py-1 text-[9px] bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg font-bold border border-slate-200 dark:border-slate-700 shadow-sm uppercase">Tailwind</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openModal('project5')" class="group cursor-pointer relative overflow-hidden p-4 md:p-6 rounded-3xl bg-white/30 dark:bg-slate-900/30 backdrop-blur-md border border-slate-200/60 dark:border-slate-800/60 hover:bg-white/60 dark:hover:bg-slate-800/60 transition-all duration-500 shadow-sm">
+                    <div class="relative flex flex-col md:flex-row gap-6">
+                        <div class="relative flex-shrink-0 w-full md:w-48 h-32 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
+                            <img src="assets/tosama.png" alt="Tosama" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-accent-500 transition-colors">Website Toko Sayur Tosama</h3>
+                                <time class="font-mono text-[10px] text-slate-400 uppercase tracking-widest">March 2025</time>
+                            </div>
+                            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em] mb-2">Company Profile</p>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl">Website profil perusahaan untuk menampilkan kesegaran produk dan layanan toko kepada pelanggan digital.</p>
+                            <div class="flex gap-2 mt-4">
+                                <span class="px-3 py-1 text-[9px] bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg font-bold border border-slate-200 dark:border-slate-700 shadow-sm uppercase">HTML</span>
+                                <span class="px-3 py-1 text-[9px] bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg font-bold border border-slate-200 dark:border-slate-700 shadow-sm uppercase">CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openModal('project6')" class="group cursor-pointer relative overflow-hidden p-4 md:p-6 rounded-3xl bg-white/30 dark:bg-slate-900/30 backdrop-blur-md border border-slate-200/60 dark:border-slate-800/60 hover:bg-white/60 dark:hover:bg-slate-800/60 transition-all duration-500 shadow-sm">
+                    <div class="relative flex flex-col md:flex-row gap-6">
+                        <div class="relative flex-shrink-0 w-full md:w-48 h-32 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
+                            <img src="assets/sound.png" alt="Web Sound" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-accent-500 transition-colors">Web Sound Production Profile</h3>
+                                <time class="font-mono text-[10px] text-slate-400 uppercase tracking-widest">Jan 2025</time>
+                            </div>
+                            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em] mb-2">Company Profile</p>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl">Website industri audio yang menonjolkan portofolio dengan navigasi intuitif.</p>
+                            <div class="flex gap-2 mt-4">
+                                <span class="px-3 py-1 text-[9px] bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg font-bold border border-slate-200 dark:border-slate-700 shadow-sm uppercase">HTML</span>
+                                <span class="px-3 py-1 text-[9px] bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg font-bold border border-slate-200 dark:border-slate-700 shadow-sm uppercase">CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openModal('project7')" class="group cursor-pointer relative overflow-hidden p-4 md:p-6 rounded-3xl bg-white/30 dark:bg-slate-900/30 backdrop-blur-md border border-slate-200/60 dark:border-slate-800/60 hover:bg-white/60 dark:hover:bg-slate-800/60 transition-all duration-500 shadow-sm">
+                    <div class="relative flex flex-col md:flex-row gap-6">
+                        <div class="relative flex-shrink-0 w-full md:w-48 h-32 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
+                            <img src="assets/ar.png" alt="AR Robot" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-accent-500 transition-colors">Robot 3D (Teknologi AR)</h3>
+                                <time class="font-mono text-[10px] text-slate-400 uppercase tracking-widest">Dec 2024</time>
+                            </div>
+                            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em] mb-2">Augmented Reality</p>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl">Implementasi teknologi AR menggunakan Unity dan Vuforia untuk memvisualisasikan model robot 3D.</p>
+                            <div class="flex gap-2 mt-4">
+                                <span class="px-3 py-1 text-[9px] bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg font-bold border border-slate-200 dark:border-slate-700 shadow-sm uppercase">Unity</span>
+                                <span class="px-3 py-1 text-[9px] bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg font-bold border border-slate-200 dark:border-slate-700 shadow-sm uppercase">Vuforia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openModal('project8')" class="group cursor-pointer relative overflow-hidden p-4 md:p-6 rounded-3xl bg-white/30 dark:bg-slate-900/30 backdrop-blur-md border border-slate-200/60 dark:border-slate-800/60 hover:bg-white/60 dark:hover:bg-slate-800/60 transition-all duration-500 shadow-sm">
+                    <div class="relative flex flex-col md:flex-row gap-6">
+                        <div class="relative flex-shrink-0 w-full md:w-48 h-32 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
+                            <img src="assets/coin.png" alt="Coin Catch" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-accent-500 transition-colors">Gim Mystic Trails 2D</h3>
+                                <time class="font-mono text-[10px] text-slate-400 uppercase tracking-widest">Nov 2024</time>
+                            </div>
+                            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em] mb-2">Game Development</p>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl">Game arcade 2D bertema petualangan dengan rintangan dinamis yang dirancang di Unity.</p>
+                            <div class="flex gap-2 mt-4">
+                                <span class="px-3 py-1 text-[9px] bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg font-bold border border-slate-200 dark:border-slate-700 shadow-sm uppercase">C#</span>
+                                <span class="px-3 py-1 text-[9px] bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg font-bold border border-slate-200 dark:border-slate-700 shadow-sm uppercase">Unity</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openModal('project9')" class="group cursor-pointer relative overflow-hidden p-4 md:p-6 rounded-3xl bg-white/30 dark:bg-slate-900/30 backdrop-blur-md border border-slate-200/60 dark:border-slate-800/60 hover:bg-white/60 dark:hover:bg-slate-800/60 transition-all duration-500 shadow-sm">
+                    <div class="relative flex flex-col md:flex-row gap-6">
+                        <div class="relative flex-shrink-0 w-full md:w-48 h-32 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
+                            <img src="assets/belajar.png" alt="English Game" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-accent-500 transition-colors">Gim Scrabble 2D</h3>
+                                <time class="font-mono text-[10px] text-slate-400 uppercase tracking-widest">Oct 2024</time>
+                            </div>
+                            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em] mb-2">Educational Game</p>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl">Game edukasi petualangan yang menggabungkan eksplorasi materi dan sistem pengujian kemampuan bahasa Inggris.</p>
+                            <div class="flex gap-2 mt-4">
+                                <span class="px-3 py-1 text-[9px] bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg font-bold border border-slate-200 dark:border-slate-700 shadow-sm uppercase">Unity</span>
+                                <span class="px-3 py-1 text-[9px] bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg font-bold border border-slate-200 dark:border-slate-700 shadow-sm uppercase">C#</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openModal('project10')" class="group cursor-pointer relative overflow-hidden p-4 md:p-6 rounded-3xl bg-white/30 dark:bg-slate-900/30 backdrop-blur-md border border-slate-200/60 dark:border-slate-800/60 hover:bg-white/60 dark:hover:bg-slate-800/60 transition-all duration-500 shadow-sm">
+                    <div class="relative flex flex-col md:flex-row gap-6">
+                        <div class="relative flex-shrink-0 w-full md:w-48 h-32 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
+                            <img src="assets/run.png" alt="Neo Run" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-accent-500 transition-colors">Gim Street Escape 3D: Endless Challenge</h3>
+                                <time class="font-mono text-[10px] text-slate-400 uppercase tracking-widest">Sept 2024</time>
+                            </div>
+                            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em] mb-2">Game Development</p>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl">Game 3D bergenre Endless Runner yang menguji ketangkasan pemain di lingkungan 3D yang dinamis.</p>
+                            <div class="flex gap-2 mt-4">
+                                <span class="px-3 py-1 text-[9px] bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg font-bold border border-slate-200 dark:border-slate-700 shadow-sm uppercase">Unity 3D</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openModal('project11')" class="group cursor-pointer relative overflow-hidden p-4 md:p-6 rounded-3xl bg-white/30 dark:bg-slate-900/30 backdrop-blur-md border border-slate-200/60 dark:border-slate-800/60 hover:bg-white/60 dark:hover:bg-slate-800/60 transition-all duration-500 shadow-sm">
+                    <div class="relative flex flex-col md:flex-row gap-6">
+                        <div class="relative flex-shrink-0 w-full md:w-48 h-32 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
+                            <img src="assets/perpus.jpg" alt="Library UI" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-accent-500 transition-colors">UI Aplikasi Perpustakaan</h3>
+                                <time class="font-mono text-[10px] text-slate-400 uppercase tracking-widest">Aug 2024</time>
+                            </div>
+                            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em] mb-2">UI/UX Design</p>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl">Perancangan antarmuka aplikasi perpustakaan modern dengan prototipe interaktif.</p>
+                            <div class="flex gap-2 mt-4">
+                                <span class="px-3 py-1 text-[9px] bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg font-bold border border-slate-200 dark:border-slate-700 shadow-sm uppercase">Figma</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openModal('project12')" class="group cursor-pointer relative overflow-hidden p-4 md:p-6 rounded-3xl bg-white/30 dark:bg-slate-900/30 backdrop-blur-md border border-slate-200/60 dark:border-slate-800/60 hover:bg-white/60 dark:hover:bg-slate-800/60 transition-all duration-500 shadow-sm">
+                    <div class="relative flex flex-col md:flex-row gap-6">
+                        <div class="relative flex-shrink-0 w-full md:w-48 h-32 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
+                            <img src="assets/jadwal.png" alt="Schedule UI" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-accent-500 transition-colors">UI Aplikasi Penjadwalan</h3>
+                                <time class="font-mono text-[10px] text-slate-400 uppercase tracking-widest">July 2024</time>
+                            </div>
+                            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em] mb-2">UI/UX Design</p>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl">Desain UI aplikasi penjadwalan sekolah untuk memantau tugas secara real-time.</p>
+                            <div class="flex gap-2 mt-4">
+                                <span class="px-3 py-1 text-[9px] bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg font-bold border border-slate-200 dark:border-slate-700 shadow-sm uppercase">Figma</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div onclick="openModal('project13')" class="group cursor-pointer relative overflow-hidden p-4 md:p-6 rounded-3xl bg-white/30 dark:bg-slate-900/30 backdrop-blur-md border border-slate-200/60 dark:border-slate-800/60 hover:bg-white/60 dark:hover:bg-slate-800/60 transition-all duration-500 shadow-sm">
+                    <div class="relative flex flex-col md:flex-row gap-6">
+                        <div class="relative flex-shrink-0 w-full md:w-48 h-32 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
+                            <img src="assets/aula.png" alt="3D Hall" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-accent-500 transition-colors">3D Architectural Model: Aula SMKN 1 Banjar</h3>
+                                <time class="font-mono text-[10px] text-slate-400 uppercase tracking-widest">June 2024</time>
+                            </div>
+                            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em] mb-2">3D Modeling</p>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl">Pemodelan arsitektur 3D Aula SMKN 1 Banjar menggunakan Blender dengan presisi tinggi.</p>
+                            <div class="flex gap-2 mt-4">
+                                <span class="px-3 py-1 text-[9px] bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg font-bold border border-slate-200 dark:border-slate-700 shadow-sm uppercase">Blender</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="project-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm transition-all duration-300">
+        <div id="modal-content" class="bg-white dark:bg-slate-900 w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] shadow-2xl border border-slate-200 dark:border-slate-800 transform scale-95 opacity-0 transition-all duration-300 relative">
+            <div class="p-8 md:p-10">
+                <button onclick="closeModal()" class="absolute top-6 right-6 p-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:scale-110 transition active:scale-95">
+                    <i class="ti ti-x text-xl"></i>
+                </button>
+                <div id="modal-data"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="kontak" class="max-w-6xl mx-auto px-6 py-20 border-t border-slate-200 dark:border-slate-800/50">
+        <div class="text-center">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-4">
+                Let's build together.
+            </h2>
+            <p class="text-slate-500 dark:text-slate-400 mb-10 max-w-sm mx-auto text-sm">
+                Tersedia untuk kolaborasi proyek atau diskusi teknis seputar web development.
+            </p>
+            
+            <a href="https://wa.me/6285176907011" 
+               style="background-color: #14b8a6;" 
+               class="inline-flex items-center gap-3 px-10 py-4 text-white font-bold rounded-2xl transition-all hover:scale-105 active:scale-95 shadow-[0_10px_20px_-10px_rgba(20,184,166,0.5)] hover:shadow-[0_15px_25px_-10px_rgba(20,184,166,0.6)]">
+                <i class="ti ti-mail text-xl"></i>
+                Hubungi Saya
+            </a>
+
+            <div class="flex justify-center gap-8 mt-16">
+                <a href="https://github.com/selasalafiah" target="_blank" class="text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
+                    <i class="ti ti-brand-github text-2xl"></i>
+                </a>
+                <a href="https://www.instagram.com/seselavy" target="_blank" class="text-slate-400 hover:text-pink-500 transition-colors">
+                    <i class="ti ti-brand-instagram text-2xl"></i>
+                </a>
+                <a href="https://wa.me/6285176907011" target="_blank" class="text-slate-400 hover:text-green-500 transition-colors">
+                    <i class="ti ti-brand-whatsapp text-2xl"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="mt-20 pt-8 border-t border-slate-100 dark:border-slate-800/30 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-400">
+                &copy; <span id="year"></span> Sela Salafiah
+            </p>
+            <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full" style="background-color: #14b8a6;"></span>
+                <p class="text-[9px] font-bold text-slate-400 uppercase tracking-[0.1em]">
+                    Web & Game Developer
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const html = document.documentElement;
+
+        function updateIcon(isDark) {
+            if (isDark) {
+                themeIcon.classList.replace('ti-moon', 'ti-sun');
+                themeIcon.classList.add('text-yellow-400');
+            } else {
+                themeIcon.classList.replace('ti-sun', 'ti-moon');
+                themeIcon.classList.remove('text-yellow-400');
+            }
+        }
+
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+            updateIcon(true);
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            const isDark = html.classList.toggle('dark');
+            localStorage.theme = isDark ? 'dark' : 'light';
+            updateIcon(isDark);
+        });
+
+        // MODAL DATA & LOGIC
+       const projectsData = {
+            project1: {
+                title: "Aplikasi Sertifikat",
+                category: "Access Media Intern",
+                date: "Februari 2026",
+                image: "assets/sertifikat.png",
+                desc: "Sistem otomatisasi pembuatan sertifikat digital bagi peserta PKL dan magang di Access Media. Aplikasi ini mengubah proses manual menjadi otomatis dengan integrasi data langsung dari database ke desain sertifikat, lengkap dengan sistem verifikasi QR Code.",
+                tech: ["Laravel", "Tailwind CSS", "MySQL"]
+            },
+            project2: {
+                title: "Point of Sale (POS) System",
+                category: "Professional Tool",
+                date: "Late 2025",
+                image: "assets/kasir.png",
+                desc: "Aplikasi kasir profesional dengan 3 hak akses (Super Admin, Admin, Kasir). Mengelola rantai pasok dari supplier, stok barang, monitoring pendapatan harian, hingga pencatatan transaksi yang akurat menggunakan Laravel Filament.",
+                tech: ["Laravel", "Filament", "MySQL"]
+            },
+            project3: {
+                title: "Seblak Tansyu Digital Ordering",
+                category: "F&B Solution",
+                date: "2025",
+                image: "assets/tansyu.png",
+                desc: "Aplikasi pemesanan makanan berbasis web yang mengadopsi sistem manajemen meja (table numbering). Dirancang untuk mempercepat alur kerja dapur dan kasir dengan pengalaman pengguna yang modern mirip dengan sistem resto besar.",
+                tech: ["PHP Native", "Tailwind CSS", "MySQL"]
+            },
+            project4: {
+                title: "Gema Warisan: Galeri Budaya Indonesia",
+                category: "Educational Tool",
+                date: "2025",
+                image: "assets/gema warisan.png",
+                desc: "Platform edukasi budaya Indonesia yang menampilkan koleksi senjata tradisional, kesenian, dan adat istiadat. Dibangun menggunakan PHP Native dengan perpaduan Tailwind dan Bootstrap untuk tampilan yang responsif dan elegan.",
+                tech: ["PHP Native", "Tailwind", "MySQL"]
+            },
+            project5: {
+                title: "Website Toko Sayur Tosama",
+                category: "Company Profile",
+                date: "2025",
+                image: "assets/tosama.png",
+                desc: "Website profil perusahaan untuk Toko Sayur Tosama. Fokus pada brand awareness untuk menampilkan kesegaran produk dan layanan toko kepada pelanggan digital melalui UI yang bersih.",
+                tech: ["HTML", "CSS", "JavaScript"]
+            },
+            project6: {
+                title: "Web Sound Production Profile",
+                category: "Company Profile",
+                date: "2025",
+                image: "assets/sound.png",
+                desc: "Website profil perusahaan untuk industri audio/sound production. Menonjolkan portofolio audio dan layanan profesional dengan navigasi yang intuitif menggunakan JavaScript.",
+                tech: ["HTML", "CSS", "JavaScript"]
+            },
+            project7: {
+                title: "Robot 3D (Teknologi AR)",
+                category: "Augmented Reality",
+                date: "2025",
+                image: "assets/ar.png",
+                desc: "Implementasi teknologi Augmented Reality menggunakan Unity dan Vuforia. Proyek ini memvisualisasikan model robot 3D ke dunia nyata lengkap dengan animasi gerak yang halus saat marker terdeteksi.",
+                tech: ["Unity", "Vuforia", "3D Animation", "C#", "Uinity Asset Store"]
+            },
+            project8: {
+                title: "Gim Mystic Trails 2D",
+                category: "Game Development",
+                date: "2025",
+                image: "assets/coin.png",
+                desc: "Game arcade 2D bertema petualangan di mana pemain harus mengumpulkan koin sebanyak mungkin sambil menghindari berbagai rintangan dinamis yang dirancang di Unity.",
+                tech: ["Unity", "C#", "Unity Asset Store"]
+            },
+            project9: {
+                title: "Gim Scrabble 2D",
+                category: "Educational Game",
+                date: "2025",
+                image: "assets/belajar.png",
+                desc: "Game edukasi bahasa Inggris berbasis petualangan. Level 1-4 berfungsi sebagai media pembelajaran melalui eksplorasi harta karun materi, diikuti dengan Level 5 sebagai sistem pengujian (test) kemampuan pemain.",
+                tech: ["Unity", "Unity Asset Store", "C#"]
+            },
+            project10: {
+                title: "Gim Street Escape 3D: Endless Challenge",
+                category: "Game Development",
+                date: "2025",
+                image: "assets/run.png",
+                desc: "Game 3D bergenre Endless Runner dengan tantangan manajemen waktu. Menguji ketangkasan pemain dalam mengumpulkan koin dan menghindari rintangan di lingkungan 3D yang dinamis.",
+                tech: ["Unity 3D", "C#", "Unity Asset Store"]
+            },
+            project11: {
+                title: "UI Aplikasi Perpustakaan",
+                category: "UI/UX Design",
+                date: "2026",
+                image: "assets/perpus.jpg",
+                desc: "Perancangan antarmuka aplikasi perpustakaan modern di Figma. Dilengkapi dengan prototipe interaktif yang mencakup alur peminjaman buku, cek ketersediaan stok, dan manajemen kartu anggota.",
+                tech: ["Figma"]
+            },
+            project12: {
+                title: "UI Aplikasi Penjadwalan",
+                category: "UI/UX Design",
+                date: "2026",
+                image: "assets/jadwal.png",
+                desc: "Desain UI untuk aplikasi penjadwalan sekolah. Dirancang khusus untuk dua sisi pengguna (Guru & Siswa) untuk memonitor tugas, tenggat waktu, dan jadwal pelajaran secara real-time.",
+                tech: ["Figma"]
+            },
+            project13: {
+                title: "3D Architectural Model: Aula SMKN 1 Banjar",
+                category: "3D Modelling",
+                date: "2025",
+                image: "assets/aula.png",
+                desc: "Pemodelan arsitektur 3D Aula SMKN 1 Banjar menggunakan Blender. Proyek ini mencakup detail tekstur, pencahayaan, dan tata ruang yang presisi sesuai dengan bangunan aslinya.",
+                tech: ["Blender"]
+            }
+        };
+        function openModal(id) {
+            const data = projectsData[id];
+            const modal = document.getElementById('project-modal');
+            const content = document.getElementById('modal-content');
+            const body = document.getElementById('modal-data');
+
+            body.innerHTML = `
+                <img src="${data.image}" class="w-full h-64 object-cover rounded-3xl mb-8 border border-slate-200 dark:border-slate-800 shadow-md">
+                <p class="text-accent-500 font-bold uppercase tracking-widest text-[10px] mb-2">${data.category} • ${data.date}</p>
+                <h2 class="text-3xl font-black text-slate-900 dark:text-white mb-6">${data.title}</h2>
+                <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-8 text-lg">${data.desc}</p>
+                <div class="flex flex-wrap gap-2">
+                    ${data.tech.map(t => `<span class="px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-xl text-xs font-bold text-slate-500 uppercase">${t}</span>`).join('')}
+                </div>
+            `;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => {
+                content.classList.remove('scale-95', 'opacity-0');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('project-modal');
+            const content = document.getElementById('modal-content');
+            content.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = (e) => { if (e.target.id === 'project-modal') closeModal(); }
+    </script>
+</body>
+</html>
