@@ -20,8 +20,37 @@
                         radial-gradient(900px 500px at 100% 0%, #0f172a 0%, transparent 45%),
                         linear-gradient(180deg, #020617 0%, #0f172a 100%);
         }
-        #modal-content::-webkit-scrollbar { width: 4px; }
-        #modal-content::-webkit-scrollbar-thumb { background: #14b8a6; border-radius: 10px; }
+        #modal-scroll {
+            scrollbar-width: thin;
+            scrollbar-color: #64748b transparent;
+        }
+        .dark #modal-scroll {
+            scrollbar-color: #cbd5e1 transparent;
+        }
+        #modal-scroll::-webkit-scrollbar { width: 6px; }
+        #modal-scroll::-webkit-scrollbar-track { background: transparent; margin-block: 12px; }
+        #modal-scroll::-webkit-scrollbar-thumb { background: #64748b; border-radius: 999px; }
+        .dark #modal-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; }
+        .image-slider { position: relative; overflow: hidden; isolation: isolate; }
+        .slider-container { display: flex; width: 100%; transition: transform 0.4s ease-in-out; will-change: transform; }
+        .slider-item { min-width: 100%; width: 100%; max-width: 100%; flex: 0 0 100%; overflow: hidden; }
+        .slider-nav { position: absolute; top: 50%; width: 100%; display: flex; justify-content: space-between; padding: 0 12px; pointer-events: none; }
+        .slider-btn { pointer-events: auto; background: rgba(0,0,0,0.4) !important; border: none !important; color: white !important; width: 40px !important; height: 40px !important; border-radius: 50% !important; cursor: pointer !important; display: flex; align-items: center; justify-content: center; font-size: 18px !important; transition: all 0.2s !important; }
+        .slider-btn:hover { background: rgba(0,0,0,0.7) !important; }
+        .slider-dots { display: flex; gap: 6px; justify-content: center; margin-top: 8px; }
+        .slider-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(100,116,139,0.4); cursor: pointer; transition: all 0.2s; }
+        .slider-dot.active { background: #14b8a6; width: 24px; border-radius: 4px; }
+
+        /* Keep project thumbnails outside modal proportional to original image ratio */
+        #experience div[onclick^="openModal"] .relative.flex-shrink-0 {
+            height: auto;
+            align-self: flex-start;
+        }
+
+        #experience div[onclick^="openModal"] .relative.flex-shrink-0 img {
+            height: auto;
+            object-fit: contain;
+        }
     </style>
 </head>
 <body class="bg-soft text-slate-800 dark:text-slate-200 font-sans min-h-screen transition-colors duration-300">
@@ -455,16 +484,16 @@
                 <div onclick="openModal('project12')" class="group cursor-pointer relative overflow-hidden p-4 md:p-6 rounded-3xl bg-white/30 dark:bg-slate-900/30 backdrop-blur-md border border-slate-200/60 dark:border-slate-800/60 hover:bg-white/60 dark:hover:bg-slate-800/60 transition-all duration-500 shadow-sm">
                     <div class="relative flex flex-col md:flex-row gap-6">
                         <div class="relative flex-shrink-0 w-full md:w-48 h-32 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
-                            <img src="assets/jadwal.png" alt="Schedule UI" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110">
+                            <img src="assets/situ.png" alt="Schedule UI" class="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110">
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
                         </div>
                         <div class="flex-grow">
                             <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-accent-500 transition-colors">UI Aplikasi Penjadwalan</h3>
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-accent-500 transition-colors">UI Website Situ Leutik</h3>
                                 <time class="font-mono text-[10px] text-slate-400 uppercase tracking-widest">July 2024</time>
                             </div>
                             <p class="text-[10px] text-slate-400 font-bold uppercase tracking-[0.2em] mb-2">UI/UX Design</p>
-                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl">Desain UI aplikasi penjadwalan sekolah untuk memantau tugas secara real-time.</p>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl">Desain UI website pariwisata untuk destinasi alam Situ Leutik.</p>
                             <div class="flex gap-2 mt-4">
                                 <span class="px-3 py-1 text-[9px] bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 rounded-lg font-bold border border-slate-200 dark:border-slate-700 shadow-sm uppercase">Figma</span>
                             </div>
@@ -497,12 +526,14 @@
     </main>
 
     <div id="project-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm transition-all duration-300">
-        <div id="modal-content" class="bg-white dark:bg-slate-900 w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] shadow-2xl border border-slate-200 dark:border-slate-800 transform scale-95 opacity-0 transition-all duration-300 relative">
-            <div class="p-8 md:p-10">
-                <button onclick="closeModal()" class="absolute top-6 right-6 p-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:scale-110 transition active:scale-95">
-                    <i class="ti ti-x text-xl"></i>
-                </button>
-                <div id="modal-data"></div>
+        <div id="modal-content" class="bg-white dark:bg-slate-900 w-full max-w-2xl rounded-[2.5rem] shadow-2xl border border-slate-200 dark:border-slate-800 transform scale-95 opacity-0 transition-all duration-300 relative overflow-hidden">
+            <button onclick="closeModal()" class="absolute top-5 right-5 z-30 p-2.5 rounded-full bg-white/95 dark:bg-slate-900/95 border border-slate-200 dark:border-slate-700 shadow-lg hover:scale-110 transition active:scale-95">
+                <i class="ti ti-x text-xl text-slate-900 dark:text-white"></i>
+            </button>
+            <div id="modal-scroll" class="max-h-[90vh] overflow-y-auto">
+                <div class="p-6 md:p-10 pt-14 md:pt-16">
+                    <div id="modal-data"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -577,13 +608,87 @@
             updateIcon(isDark);
         });
 
+        // Show Local only for selected projects; show View Live for deployed projects.
+        const localProjects = new Set(['project2', 'project4', 'project7', 'project13']);
+
+        // Define project links here
+        const projectLinks = {
+            project1: 'https://cert.haadir.in/',
+            project3: 'https://seblaktansyuu.rf.gd/?meja=1',
+            project5: 'https://tosama-kotabanjar.netlify.app/',
+            project6: 'https://selazy1.github.io/parkinproduction-sela/',
+            project8: 'https://pplgsmknesaba.itch.io/mystic-trails',
+            project9: 'https://pplgsmknesaba.itch.io/scrabble',
+            project10: 'https://pplgsmknesaba.itch.io/streetescape',
+            project11: 'https://www.figma.com/design/Yy4kQVI0W2mwbuVaKWYJVw/UI-UX-Perpus?node-id=0-1&t=K3X8vLIP4kHnjWr3-1',
+            project12: 'https://www.figma.com/design/P1O6tSQ94CMQfAcL6zeBIf/Untitled?node-id=0-1&t=Ry3m3vH1xDmjrUHv-1'
+        };
+
+        function attachViewLiveLinks() {
+            const cards = document.querySelectorAll("div[onclick^=\"openModal\"]");
+
+            cards.forEach((card) => {
+                const onclickValue = card.getAttribute('onclick') || '';
+                const match = onclickValue.match(/openModal\('([^']+)'\)/);
+                if (!match) return;
+
+                const projectId = match[1];
+                const techRow = card.querySelector('.flex.gap-2.mt-4');
+                if (!techRow || techRow.dataset.liveReady === 'true') return;
+
+                const badgeWrapper = document.createElement('div');
+                badgeWrapper.className = 'flex flex-wrap gap-2';
+                while (techRow.firstChild) {
+                    badgeWrapper.appendChild(techRow.firstChild);
+                }
+
+                const linkGroup = document.createElement('div');
+                linkGroup.className = 'flex items-center gap-2 shrink-0';
+
+                const createLinkButton = (label, href) => {
+                    const link = document.createElement('a');
+                    link.href = href || '#';
+                    link.target = '_blank';
+                    link.rel = 'noopener noreferrer';
+                    link.className = 'text-[10px] font-bold uppercase tracking-widest text-accent-500 hover:text-accent-600 transition whitespace-nowrap';
+                    link.textContent = label;
+                    link.addEventListener('click', (event) => {
+                        event.stopPropagation();
+                    });
+                    return link;
+                };
+
+                const createStatusLabel = (label) => {
+                    const status = document.createElement('span');
+                    status.className = 'text-[10px] font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 whitespace-nowrap select-none';
+                    status.textContent = label;
+                    return status;
+                };
+
+                if (localProjects.has(projectId)) {
+                    linkGroup.appendChild(createStatusLabel('Local'));
+                } else {
+                    const projectUrl = projectLinks[projectId] || '#';
+                    linkGroup.appendChild(createLinkButton('View Live', projectUrl));
+                }
+
+                techRow.classList.remove('gap-2');
+                techRow.classList.add('items-center', 'justify-between', 'gap-3', 'flex-wrap');
+                techRow.appendChild(badgeWrapper);
+                techRow.appendChild(linkGroup);
+                techRow.dataset.liveReady = 'true';
+            });
+        }
+
+        attachViewLiveLinks();
+
         // MODAL DATA & LOGIC
        const projectsData = {
             project1: {
                 title: "Aplikasi Sertifikat",
                 category: "Access Media Intern",
                 date: "Februari 2026",
-                image: "assets/sertifikat.png",
+                images: ["assets/sertifikat.png", "assets/sertifikat 2.png", "assets/sertifikat 3.png", "assets/sertifikat 4.png"],
                 desc: "Sistem otomatisasi pembuatan sertifikat digital bagi peserta PKL dan magang di Access Media. Aplikasi ini mengubah proses manual menjadi otomatis dengan integrasi data langsung dari database ke desain sertifikat, lengkap dengan sistem verifikasi QR Code.",
                 tech: ["Laravel", "Tailwind CSS", "MySQL"]
             },
@@ -591,7 +696,7 @@
                 title: "Point of Sale (POS) System",
                 category: "Professional Tool",
                 date: "Late 2025",
-                image: "assets/kasir.png",
+                images: ["assets/kasir.png", "assets/kasir 2.png", "assets/kasir 3.png", "assets/kasir 4.png"],
                 desc: "Aplikasi kasir profesional dengan 3 hak akses (Super Admin, Admin, Kasir). Mengelola rantai pasok dari supplier, stok barang, monitoring pendapatan harian, hingga pencatatan transaksi yang akurat menggunakan Laravel Filament.",
                 tech: ["Laravel", "Filament", "MySQL"]
             },
@@ -599,7 +704,7 @@
                 title: "Seblak Tansyu Digital Ordering",
                 category: "F&B Solution",
                 date: "2025",
-                image: "assets/tansyu.png",
+                images: ["assets/tansyu.png", "assets/tansyu 2.png", "assets/tansyu 3.png", "assets/tansyu 4.png", "assets/tansyu 5.png"],
                 desc: "Aplikasi pemesanan makanan berbasis web yang mengadopsi sistem manajemen meja (table numbering). Dirancang untuk mempercepat alur kerja dapur dan kasir dengan pengalaman pengguna yang modern mirip dengan sistem resto besar.",
                 tech: ["PHP Native", "Tailwind CSS", "MySQL"]
             },
@@ -607,7 +712,7 @@
                 title: "Gema Warisan: Galeri Budaya Indonesia",
                 category: "Educational Tool",
                 date: "2025",
-                image: "assets/gema warisan.png",
+                images: ["assets/gema warisan.png", "assets/gema warisan 2.png", "assets/gema warisan 3.png", "assets/gema warisan 4.png", "assets/gema warisan 5.png"],
                 desc: "Platform edukasi budaya Indonesia yang menampilkan koleksi senjata tradisional, kesenian, dan adat istiadat. Dibangun menggunakan PHP Native dengan perpaduan Tailwind dan Bootstrap untuk tampilan yang responsif dan elegan.",
                 tech: ["PHP Native", "Tailwind", "MySQL"]
             },
@@ -615,7 +720,7 @@
                 title: "Website Toko Sayur Tosama",
                 category: "Company Profile",
                 date: "2025",
-                image: "assets/tosama.png",
+                images: ["assets/tosama.png"],
                 desc: "Website profil perusahaan untuk Toko Sayur Tosama. Fokus pada brand awareness untuk menampilkan kesegaran produk dan layanan toko kepada pelanggan digital melalui UI yang bersih.",
                 tech: ["HTML", "CSS", "JavaScript"]
             },
@@ -623,7 +728,7 @@
                 title: "Web Sound Production Profile",
                 category: "Company Profile",
                 date: "2025",
-                image: "assets/sound.png",
+                images: ["assets/sound.png"],
                 desc: "Website profil perusahaan untuk industri audio/sound production. Menonjolkan portofolio audio dan layanan profesional dengan navigasi yang intuitif menggunakan JavaScript.",
                 tech: ["HTML", "CSS", "JavaScript"]
             },
@@ -631,7 +736,7 @@
                 title: "Robot 3D (Teknologi AR)",
                 category: "Augmented Reality",
                 date: "2025",
-                image: "assets/ar.png",
+                images: ["assets/ar.png", "assets/ar 2.png", "assets/ar 3.png"],
                 desc: "Implementasi teknologi Augmented Reality menggunakan Unity dan Vuforia. Proyek ini memvisualisasikan model robot 3D ke dunia nyata lengkap dengan animasi gerak yang halus saat marker terdeteksi.",
                 tech: ["Unity", "Vuforia", "3D Animation", "C#", "Uinity Asset Store"]
             },
@@ -639,7 +744,7 @@
                 title: "Gim Mystic Trails 2D",
                 category: "Game Development",
                 date: "2025",
-                image: "assets/coin.png",
+                images: ["assets/coin.png", "assets/coin 2.png", "assets/coin 3.png", "assets/coin 4.png", "assets/coin 5.png"],
                 desc: "Game arcade 2D bertema petualangan di mana pemain harus mengumpulkan koin sebanyak mungkin sambil menghindari berbagai rintangan dinamis yang dirancang di Unity.",
                 tech: ["Unity", "C#", "Unity Asset Store"]
             },
@@ -647,7 +752,7 @@
                 title: "Gim Scrabble 2D",
                 category: "Educational Game",
                 date: "2025",
-                image: "assets/belajar.png",
+                images: ["assets/belajar.png", "assets/belajar 2.png", "assets/belajar 3.png", "assets/belajar 4.png", "assets/belajar 5.png", "assets/belajar 6.png", "assets/belajar 7.png", "assets/belajar 8.png"],
                 desc: "Game edukasi bahasa Inggris berbasis petualangan. Level 1-4 berfungsi sebagai media pembelajaran melalui eksplorasi harta karun materi, diikuti dengan Level 5 sebagai sistem pengujian (test) kemampuan pemain.",
                 tech: ["Unity", "Unity Asset Store", "C#"]
             },
@@ -655,7 +760,7 @@
                 title: "Gim Street Escape 3D: Endless Challenge",
                 category: "Game Development",
                 date: "2025",
-                image: "assets/run.png",
+                images: ["assets/run.png", "assets/run 2.png", "assets/run 3.png"],
                 desc: "Game 3D bergenre Endless Runner dengan tantangan manajemen waktu. Menguji ketangkasan pemain dalam mengumpulkan koin dan menghindari rintangan di lingkungan 3D yang dinamis.",
                 tech: ["Unity 3D", "C#", "Unity Asset Store"]
             },
@@ -663,45 +768,88 @@
                 title: "UI Aplikasi Perpustakaan",
                 category: "UI/UX Design",
                 date: "2026",
-                image: "assets/perpus.jpg",
+                images: ["assets/perpus.jpg"],
                 desc: "Perancangan antarmuka aplikasi perpustakaan modern di Figma. Dilengkapi dengan prototipe interaktif yang mencakup alur peminjaman buku, cek ketersediaan stok, dan manajemen kartu anggota.",
                 tech: ["Figma"]
             },
             project12: {
-                title: "UI Aplikasi Penjadwalan",
+                title: "UI Website Situ Leutik",
                 category: "UI/UX Design",
                 date: "2026",
-                image: "assets/jadwal.png",
-                desc: "Desain UI untuk aplikasi penjadwalan sekolah. Dirancang khusus untuk dua sisi pengguna (Guru & Siswa) untuk memonitor tugas, tenggat waktu, dan jadwal pelajaran secara real-time.",
+                images: ["assets/situ.png"],
+                desc: "Desain UI website pariwisata untuk destinasi alam Situ Leutik. Website ini menampilkan informasi lengkap tentang lokasi, fasilitas, dan pengalaman wisata dengan visual yang memukau dari keindahan alam.",
                 tech: ["Figma"]
             },
             project13: {
                 title: "3D Architectural Model: Aula SMKN 1 Banjar",
                 category: "3D Modelling",
                 date: "2025",
-                image: "assets/aula.png",
+                images: ["assets/aula.png"],
                 desc: "Pemodelan arsitektur 3D Aula SMKN 1 Banjar menggunakan Blender. Proyek ini mencakup detail tekstur, pencahayaan, dan tata ruang yang presisi sesuai dengan bangunan aslinya.",
                 tech: ["Blender"]
             }
         };
+        let currentSlide = 0;
+        function updateSlider(id) {
+            const container = document.getElementById('slider-container-' + id);
+            if (container) {
+                container.style.transform = `translateX(-${currentSlide * 100}%)`;
+            }
+            updateDots(id);
+        }
+        function updateDots(id) {
+            const dots = document.querySelectorAll(`[data-slider="${id}"] .slider-dot`);
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+        }
+        function nextSlide(id, images) {
+            currentSlide = (currentSlide + 1) % images.length;
+            updateSlider(id);
+        }
+        function prevSlide(id, images) {
+            currentSlide = (currentSlide - 1 + images.length) % images.length;
+            updateSlider(id);
+        }
         function openModal(id) {
             const data = projectsData[id];
             const modal = document.getElementById('project-modal');
             const content = document.getElementById('modal-content');
             const body = document.getElementById('modal-data');
+            const modalScroll = document.getElementById('modal-scroll');
+            currentSlide = 0;
+            const hasMultiple = data.images.length > 1;
 
             body.innerHTML = `
-                <img src="${data.image}" class="w-full h-64 object-cover rounded-3xl mb-8 border border-slate-200 dark:border-slate-800 shadow-md">
+                <div class="image-slider mb-8" data-slider="${id}">
+                    <div class="slider-container" id="slider-container-${id}">
+                        ${data.images.map(img => `<div class="slider-item"><img src="${img}" class="block w-full h-[180px] sm:h-[250px] md:h-[320px] object-contain bg-slate-100 dark:bg-slate-800/40 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-md p-2"></div>`).join('')}
+                    </div>
+                    ${hasMultiple ? `
+                    <div class="slider-nav">
+                        <button class="slider-btn" onclick="prevSlide('${id}', ${JSON.stringify(data.images).replace(/"/g, '&quot;')})">&lsaquo;</button>
+                        <button class="slider-btn" onclick="nextSlide('${id}', ${JSON.stringify(data.images).replace(/"/g, '&quot;')})">&rsaquo;</button>
+                    </div>
+                    ` : ''}
+                    ${hasMultiple ? `
+                    <div class="slider-dots">
+                        ${data.images.map((_, i) => `<div class="slider-dot ${i === 0 ? 'active' : ''}"></div>`).join('')}
+                    </div>
+                    ` : ''}
+                </div>
                 <p class="text-accent-500 font-bold uppercase tracking-widest text-[10px] mb-2">${data.category} • ${data.date}</p>
-                <h2 class="text-3xl font-black text-slate-900 dark:text-white mb-6">${data.title}</h2>
-                <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-8 text-lg">${data.desc}</p>
+                <h2 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-4 md:mb-6">${data.title}</h2>
+                <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6 md:mb-8 text-sm md:text-lg">${data.desc}</p>
                 <div class="flex flex-wrap gap-2">
-                    ${data.tech.map(t => `<span class="px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-xl text-xs font-bold text-slate-500 uppercase">${t}</span>`).join('')}
+                    ${data.tech.map(t => `<span class="px-3 md:px-4 py-1.5 md:py-2 bg-slate-100 dark:bg-slate-800 rounded-xl text-[10px] md:text-xs font-bold text-slate-500 uppercase">${t}</span>`).join('')}
                 </div>
             `;
 
             modal.classList.remove('hidden');
             modal.classList.add('flex');
+            if (modalScroll) {
+                modalScroll.scrollTop = 0;
+            }
             setTimeout(() => {
                 content.classList.remove('scale-95', 'opacity-0');
             }, 10);
